@@ -75,3 +75,5 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 	
 	
+	
+	private static String UPLOADED_FOLDER = System.getProperty("user.dir")+File.separator+"//src//main//resources";
