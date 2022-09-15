@@ -15,3 +15,22 @@ formData.append('bookstring', JSON.stringify(book));
     formData.append('image', uploadedImage);
 
     return this.http.post(BASE_URL, formData);
+
+
+@PostMapping("/savebook")
+	public Integer saveBook(@RequestParam("bookstring") String book,@RequestParam("image") MultipartFile file) throws JsonMappingException, JsonProcessingException {
+
+		if (file.isEmpty()) {
+
+		}
+
+		try {
+			// Get the file and save it somewhere
+			byte[] bytes = file.getBytes();
+			Path path = Paths
+					.get(UPLOADED_FOLDER + File.separator + "images" + File.separator + file.getOriginalFilename());
+			Files.write(path, bytes);
+			
+
+		} catch (IOException e) {
+			e.print
