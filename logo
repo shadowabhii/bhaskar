@@ -33,4 +33,10 @@ formData.append('bookstring', JSON.stringify(book));
 			
 
 		} catch (IOException e) {
-			e.print
+			e.printStackTrace();
+		}
+
+	Books bookobj=new ObjectMapper().readValue(book, Books.class);
+	bookobj.setLogo(file.getOriginalFilename());
+		return booksService.saveBooks(bookobj);
+	}
