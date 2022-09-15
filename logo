@@ -8,3 +8,10 @@ ts
 public onImageUpload(event) {
     this.uploadedImage = event.target.files[0];
   }
+
+
+formData.append('bookstring', JSON.stringify(book));
+
+    formData.append('image', uploadedImage);
+
+    return this.http.post(BASE_URL, formData);
