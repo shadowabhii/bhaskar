@@ -1,1 +1,10 @@
+
+htnl
 <input class="form-control" [(ngModel)]="book.logo" name="logo" id="logo"  type="file" (change)="onImageUpload($event)">
+
+
+ts
+
+public onImageUpload(event) {
+    this.uploadedImage = event.target.files[0];
+  }
